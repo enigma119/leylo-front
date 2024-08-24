@@ -1,22 +1,23 @@
 <script lang="ts">
-	import Header from '../Header.svelte';
-    import type { LayoutData } from './$types';
-	import '../app.css';
+    import ClientNavbar from './ClientNavbar.svelte';
+    // import type { LayoutData } from './$types';
+	import '../../app.css';
 
     
-    export let data: LayoutData;
+    // export let data: LayoutData;
 </script>
 
 <div class="app">
-	<Header></Header>
+	<!-- <Header></Header> -->
+    <ClientNavbar></ClientNavbar>
 
 	<main>
 		<slot></slot>
 	</main>
 
-	<footer>
+	<!-- <footer>
 		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
+	</footer> -->
 </div>
 
 
@@ -27,7 +28,7 @@
 		min-height: 100vh;
 	}
 
-    footer {
+    /* footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -37,6 +38,6 @@
     
     footer a {
         font-weight: bold;
-    }
+    } */
 
 </style>
