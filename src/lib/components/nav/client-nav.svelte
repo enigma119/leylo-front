@@ -6,6 +6,13 @@
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index";
     import * as Sheet from "$lib/components/ui/sheet/index";
     import { dialogStore } from "$lib/stores/dialogStore"
+    import { page } from '$app/stores';
+
+    $: activeUrl = $page.url.pathname;
+
+    function isActiveUrl(path: string) {
+      return activeUrl === path ? 'text-foreground' : 'text-muted-foreground';
+    }
 
     function openSignUpDialog() {
       dialogStore.set({ signUp: true, signIn: false });
@@ -19,25 +26,24 @@
   </script>
 
 
-  <div class="flex min-h-screen w-full flex-col">
+  <div class="flex w-full flex-col">
     <header class="bg-background sticky top-0 flex h-16 justify-between items-center gap-4 border-b px-4 md:px-6">
       <nav
         class="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6"
       >
         <a href="/" class="flex items-center gap-2 text-lg font-semibold md:text-base">
-          <!-- <Package2 class="h-6 w-6" /> -->
           <span class="text-2xl font-bold text-gray-900 dark:text-[#ccd6f6]">Leylo</span>
         </a>
-        <a href="/cars" class="text-foreground hover:text-foreground transition-colors">
+        <a href="/cars" class="{isActiveUrl('/cars')}  hover:text-foreground transition-colors">
           Cars
         </a>
-        <a href="/services" class="text-muted-foreground hover:text-foreground transition-colors">
+        <a href="/services" class="{isActiveUrl('/services')}  hover:text-foreground transition-colors">
           Services
         </a>
-        <a href="/reviews" class="text-muted-foreground hover:text-foreground transition-colors">
+        <a href="/reviews" class="{isActiveUrl('/reviews')}  hover:text-foreground transition-colors">
           Reviews
         </a>
-        <a href="##" class="text-muted-foreground hover:text-foreground transition-colors min-w-fit">
+        <a href="/how-it-works" class="{isActiveUrl('/how-it-works')}  hover:text-foreground transition-colors min-w-fit">
           How it works
         </a>
       </nav>
@@ -57,15 +63,14 @@
         </Sheet.Trigger>
         <Sheet.Content side="left">
           <nav class="grid gap-6 text-lg font-medium">
-            <a href="##" class="flex items-center gap-2 text-lg font-semibold">
+            <a href="/" class="flex items-center gap-2 text-lg font-semibold">
               <Package2 class="h-6 w-6" />
-              <span class="sr-only">Acme Inc</span>
+              <span class="sr-only">Leylo</span>
             </a>
-            <a href="##" class="hover:text-foreground"> Dashboard </a>
-            <a href="##" class="text-muted-foreground hover:text-foreground"> Orders </a>
-            <a href="##" class="text-muted-foreground hover:text-foreground"> Products </a>
-            <a href="##" class="text-muted-foreground hover:text-foreground"> Customers </a>
-            <a href="##" class="text-muted-foreground hover:text-foreground"> Analytics </a>
+            <a href="/cars" class="{isActiveUrl('/cars')} hover:text-foreground"> Cars </a>
+            <a href="/services" class="{isActiveUrl('/services')} hover:text-foreground"> Services </a>
+            <a href="/reviews" class="{isActiveUrl('/reviews')} hover:text-foreground"> Reviews </a>
+            <a href="/how-it-works" class="{isActiveUrl('/how-it-works')} hover:text-foreground"> How it works </a>
           </nav>
         </Sheet.Content>
       </Sheet.Root>

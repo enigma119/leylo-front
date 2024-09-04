@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<div class="app">
+<div class="flex flex-col min-h-screen">
 
 	<main>
 		<slot></slot>
@@ -9,10 +9,3 @@
 
 </div>
 
-<style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-</style>
