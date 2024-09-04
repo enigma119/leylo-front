@@ -85,7 +85,7 @@
                 </Button>
             </div>
           </DropdownMenu.Trigger>
-          <DropdownMenu.Content align="end" class="-mt-1">
+          <DropdownMenu.Content align="end">
             <DropdownMenu.Label>My Account</DropdownMenu.Label>
             <DropdownMenu.Separator />
             <DropdownMenu.Item>Settings</DropdownMenu.Item>
