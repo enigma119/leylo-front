@@ -2,7 +2,9 @@
     import { SignUpForm, SignInForm } from "$lib/components/auth";
     import { dialogStore } from '$lib/stores/dialogStore';
 	import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogClose } from "$lib/components/ui/dialog";
-  
+  export let data;
+  $: ({ signUpForm, signInForm } = data);
+
   </script>
   
   {#if $dialogStore.signUp}
@@ -17,11 +19,7 @@
   {#if $dialogStore.signIn}
     <Dialog bind:open={$dialogStore.signIn} >
       <DialogContent class="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>Sign In</DialogTitle>
-          <DialogDescription>Sign in to your account.</DialogDescription>
-        </DialogHeader>
-        <SignInForm />
+        <SignInForm {signInForm}/>
       </DialogContent>
     </Dialog>
   {/if}
