@@ -1,8 +1,18 @@
 <script lang="ts">
-import { invalidate } from '$app/navigation';
+	import '../app.css';
+	import AuthDialogs from '$lib/components/auth/AuthDialogs.svelte';
+	import { ClientNav } from '$lib/components/nav';
+	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
+	import type { Session, SupabaseClient } from '@supabase/supabase-js';
 
-	export let data;
+
+	interface LayoutData {
+		session: Session | null;
+		supabase: SupabaseClient;
+	}
+
+	export let data: LayoutData;
 	$: ({ session, supabase } = data);
 
 	onMount(() => {
@@ -17,6 +27,9 @@ import { invalidate } from '$app/navigation';
 </script>
 
 <div class="flex min-h-screen flex-col">
+	<ClientNav></ClientNav>
+	<AuthDialogs />
+
 	<main>
 		<slot></slot>
 	</main>

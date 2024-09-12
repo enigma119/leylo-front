@@ -1,9 +1,7 @@
 <script lang="ts">
     import { SignUpForm, SignInForm } from "$lib/components/auth";
     import { dialogStore } from '$lib/stores/dialogStore';
-	import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogClose } from "$lib/components/ui/dialog";
-  export let data;
-  $: ({ signUpForm, signInForm } = data);
+	  import { Dialog, DialogContent, DialogClose } from "$lib/components/ui/dialog";
 
   </script>
   
@@ -19,7 +17,7 @@
   {#if $dialogStore.signIn}
     <Dialog bind:open={$dialogStore.signIn} >
       <DialogContent class="sm:max-w-[425px]">
-        <SignInForm {signInForm}/>
+        <SignInForm />
       </DialogContent>
     </Dialog>
   {/if}

@@ -1,14 +1,10 @@
 <script lang="ts">
-	import AuthDialogs from './../lib/components/auth/AuthDialogs.svelte';
 	import { page } from '$app/stores';
-	import ClientNav from '$lib/components/nav/client-nav.svelte';
 	import NotFound from '$lib/components/core/NotFound.svelte';
 	import '../app.css';
 </script>
 
 <div class="flex flex-col min-h-screen">
-	<ClientNav />
-    <AuthDialogs/>
 	{#if $page.status === 404}
 		<main class="flex-grow flex items-center justify-center">
 			<NotFound />
