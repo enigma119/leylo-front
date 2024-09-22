@@ -59,7 +59,7 @@
 
 <Card.Root class="w-full border-none p-0 shadow-none">
 	<Card.Header class="space-y-1  text-center">
-		<Card.Title class="text-2xl">Welcome back</Card.Title>
+		<Card.Title class="text-2xl">Hello Leylo</Card.Title>
 		<Card.Description>Dont have an account? <a href="/sign-up">Register here</a></Card.Description>
 	</Card.Header>
 	<Card.Content class="grid gap-4">

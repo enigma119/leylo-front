@@ -15,6 +15,8 @@
 
 	// const authData: AuthData = { signUpForm, signInForm };
 
+	import { Hero, Stats, CityGrid } from '$lib/components/landingPage';
+
 
 </script>
 
@@ -23,5 +25,7 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<div>
-</div>
+<Hero />
+<Stats />
+<CityGrid />
+
