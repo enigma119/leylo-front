@@ -21,24 +21,22 @@ const config: Config = {
 				background: "hsl(var(--background) / <alpha-value>)",
 				foreground: "hsl(var(--foreground) / <alpha-value>)",
 				primary: {
-					DEFAULT: "hsl(var(--primary) / <alpha-value>)",
-					foreground: "hsl(var(--primary-foreground) / <alpha-value>)"
+					DEFAULT: "#3a57d4",
+					foreground: "#ffffff"
 				},
 				secondary: {
-					DEFAULT: "hsl(var(--secondary) / <alpha-value>)",
-					foreground: "hsl(var(--secondary-foreground) / <alpha-value>)"
+					DEFAULT: "#0e163a",
+					foreground: "#ffffff"
 				},
 				destructive: {
-					DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
-					foreground: "hsl(var(--destructive-foreground) / <alpha-value>)"
+					DEFAULT: "#e0eeff",
 				},
 				muted: {
 					DEFAULT: "hsl(var(--muted) / <alpha-value>)",
 					foreground: "hsl(var(--muted-foreground) / <alpha-value>)"
 				},
 				accent: {
-					DEFAULT: "hsl(var(--accent) / <alpha-value>)",
-					foreground: "hsl(var(--accent-foreground) / <alpha-value>)"
+					DEFAULT: "#8a8f98"
 				},
 				popover: {
 					DEFAULT: "hsl(var(--popover) / <alpha-value>)",
